@@ -1,21 +1,29 @@
 package model;
 
+import java.util.Set;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ACTIVITIES")
 public class Activity {
-	private Integer year;
-	private String nature;
+	@EmbeddedId
+	private ActivityPk apk;
 	private String title;
 	private String description;
 	private String webAddress;
+
+	@ManyToMany(mappedBy = "activities")
+	private Set<Person> persons;
 
 	public Activity() {
 	}
 
 	public String getDescription() {
 		return description;
-	}
-
-	public String getNature() {
-		return nature;
 	}
 
 	public String getTitle() {
@@ -26,16 +34,8 @@ public class Activity {
 		return webAddress;
 	}
 
-	public Integer getYear() {
-		return year;
-	}
-
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public void setNature(String nature) {
-		this.nature = nature;
 	}
 
 	public void setTitle(String title) {
@@ -46,8 +46,12 @@ public class Activity {
 		this.webAddress = webAddress;
 	}
 
-	public void setYear(Integer year) {
-		this.year = year;
+	public ActivityPk getApk() {
+		return apk;
+	}
+
+	public void setApk(ActivityPk apk) {
+		this.apk = apk;
 	}
 
 }

@@ -1,15 +1,31 @@
 package model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "PERSONS")
 public class Person {
+	@Id
 	private Integer id;
 	private String name;
 	private String firstName;
 	private String email;
 	private String webAddress;
+
+	@Temporal(TemporalType.DATE)
 	private Date birthday;
 	private String password;
+
+	@ManyToMany
+	private Set<Activity> activities;
 
 	public Person() {
 	}
