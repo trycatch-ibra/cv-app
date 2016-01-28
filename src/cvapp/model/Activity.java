@@ -1,4 +1,4 @@
-package model;
+package cvapp.model;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

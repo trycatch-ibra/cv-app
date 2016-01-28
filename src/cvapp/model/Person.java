@@ -1,4 +1,4 @@
-package model;
+package cvapp.model;
 
 import java.util.Date;
 import java.util.Set;

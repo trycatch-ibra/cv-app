@@ -6,7 +6,7 @@ import cvapp.dao.exception.DaoCreateException;
 import cvapp.dao.exception.DaoDeleteException;
 import cvapp.dao.exception.DaoFindException;
 import cvapp.dao.exception.DaoUpdateException;
-import model.Activity;
+import cvapp.model.Activity;
 
 public interface ActivityDao {
 	public void create(Activity activity) throws DaoCreateException;

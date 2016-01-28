@@ -1,9 +1,9 @@
-package business;
+package cvapp.business;
 
 import javax.ejb.Local;
 import javax.ejb.Stateful;
 
-import model.Person;
+import cvapp.model.Person;
 
 /**
  * 

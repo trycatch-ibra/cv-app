@@ -1,4 +1,4 @@
-package model;
+package cvapp.model;
 
 import java.io.Serializable;
 

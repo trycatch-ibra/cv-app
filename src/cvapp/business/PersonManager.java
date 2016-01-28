@@ -1,8 +1,8 @@
-package business;
+package cvapp.business;
 
 import javax.ejb.Stateless;
 
-import model.Person;
+import cvapp.model.Person;
 
 /**
  * 

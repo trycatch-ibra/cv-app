@@ -6,7 +6,7 @@ import cvapp.dao.exception.DaoCreateException;
 import cvapp.dao.exception.DaoDeleteException;
 import cvapp.dao.exception.DaoFindException;
 import cvapp.dao.exception.DaoUpdateException;
-import model.Person;
+import cvapp.model.Person;
 
 public interface PersonDao {
 	public void create(Person person) throws DaoCreateException;
