@@ -10,7 +10,7 @@
 		<class>model.Activity</class>
 		<properties><!-- parametres de connection JDBC -->
 			<property name="javax.persistence.jdbc.Driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cvapp-db" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cvappdb" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="" /><!-- 
 				validation du mapping -->

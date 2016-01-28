@@ -1,10 +1,8 @@
 package model;
 
-import java.util.Set;
-
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +14,8 @@ public class Activity {
 	private String description;
 	private String webAddress;
 
-	@ManyToMany(mappedBy = "activities")
-	private Set<Person> persons;
+	@ManyToOne
+	private Person person;
 
 	public Activity() {
 	}
@@ -54,4 +52,11 @@ public class Activity {
 		this.apk = apk;
 	}
 
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 }

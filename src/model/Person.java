@@ -5,7 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,7 +24,7 @@ public class Person {
 	private Date birthday;
 	private String password;
 
-	@ManyToMany
+	@OneToMany(mappedBy = "person")
 	private Set<Activity> activities;
 
 	public Person() {
