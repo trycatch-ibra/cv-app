@@ -1,15 +1,20 @@
 package cvapp.model;
 
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "ACTIVITIES")
+@Table(name = "ACTIVITIES", uniqueConstraints = {
+		@UniqueConstraint(name = "annee_nature", columnNames = { "year", "nature" }) })
 public class Activity {
-	@EmbeddedId
-	private ActivityPk apk;
+	
+	@Temporal(TemporalType.DATE)
+	private Integer year;
+	private String nature;
 	private String title;
 	private String description;
 	private String webAddress;
@@ -20,6 +25,14 @@ public class Activity {
 	public Activity() {
 	}
 
+	public Integer getYear() {
+		return year;
+	}
+	
+	public String getNature() {
+		return nature;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -32,6 +45,14 @@ public class Activity {
 		return webAddress;
 	}
 
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+	
+	public void setNature(String nature) {
+		this.nature = nature;
+	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -44,13 +65,6 @@ public class Activity {
 		this.webAddress = webAddress;
 	}
 
-	public ActivityPk getApk() {
-		return apk;
-	}
-
-	public void setApk(ActivityPk apk) {
-		this.apk = apk;
-	}
 
 	public Person getPerson() {
 		return person;
