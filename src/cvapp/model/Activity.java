@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Table(name = "ACTIVITIES")
 public class Activity {
 	@EmbeddedId
-	private ActivityPk apk;
 	private String title;
 	private String description;
 	private String webAddress;
@@ -44,13 +43,7 @@ public class Activity {
 		this.webAddress = webAddress;
 	}
 
-	public ActivityPk getApk() {
-		return apk;
-	}
 
-	public void setApk(ActivityPk apk) {
-		this.apk = apk;
-	}
 
 	public Person getPerson() {
 		return person;

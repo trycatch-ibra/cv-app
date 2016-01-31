@@ -9,6 +9,8 @@ import cvapp.dao.exception.DaoUpdateException;
 import cvapp.model.Person;
 
 public interface PersonDao {
+
+
 	public void create(Person person) throws DaoCreateException;
 
 	public void update(Person person) throws DaoUpdateException;

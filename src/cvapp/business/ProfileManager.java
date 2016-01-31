@@ -10,7 +10,7 @@ import cvapp.model.Person;
  * @author Ibrahima SEYE
  * @author Kandel ACHIRAFI
  * 
- *         This interface is a service used to manage connected user
+ * This class is used to implement the connected user's actions 
  */
 
 @Local
