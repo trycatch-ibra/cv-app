@@ -11,7 +11,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "ACTIVITIES", uniqueConstraints = {
 		@UniqueConstraint(name = "annee_nature", columnNames = { "year", "nature" }) })
 public class Activity {
-	
+
 	@Temporal(TemporalType.DATE)
 	private Integer year;
 	private String nature;
@@ -28,11 +28,11 @@ public class Activity {
 	public Integer getYear() {
 		return year;
 	}
-	
+
 	public String getNature() {
 		return nature;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -48,11 +48,11 @@ public class Activity {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-	
+
 	public void setNature(String nature) {
 		this.nature = nature;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -64,7 +64,6 @@ public class Activity {
 	public void setWebAddress(String webAddress) {
 		this.webAddress = webAddress;
 	}
-
 
 	public Person getPerson() {
 		return person;
