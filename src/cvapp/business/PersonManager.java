@@ -1,12 +1,12 @@
 package cvapp.business;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
-import cvapp.dao.exception.DaoCreateException;
-import cvapp.dao.exception.DaoFindException;
-import cvapp.dao.exception.DaoUpdateException;
 import cvapp.model.Person;
 
 /**
@@ -22,12 +22,18 @@ public class PersonManager {
 	@PersistenceContext(unitName = "cvapp")
 	private EntityManager em;
 
-	public void savePerson(Person person) throws DaoFindException, DaoCreateException, DaoUpdateException {
+	public void savePerson(Person person) {
+		if (em.find(Person.class, person.getId()) == null) {
+			em.persist(person);
+		} else {
+			em.merge(person);
+		}
 
 	}
 
-	public void showPersons() {
-
+	public List<Person> showPersons() {
+		Query query = em.createQuery("SELECT p FROM PERSONS p");
+		return (List<Person>) query.getResultList();
 	}
 
 }
